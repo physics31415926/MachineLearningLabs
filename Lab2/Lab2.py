@@ -23,8 +23,11 @@ B_X_CENTER = 0.0
 B_Y_CENTER = -0.5
 
 STANDARD_DEVIATION = 0.2
-C = 1
+C = 10
 kernel = Linear_kernel
+# kernel = Polynomial_kernel
+# kernel = RBF_kernel
+
 # generate the data
 
 # randn generates an array of shape (d0, d1, ..., dn),
@@ -102,15 +105,10 @@ for i in range(N):
 print(nonzero)
 
 # calculate b
-sv_sample = 0
-for n in nonzero:
-    if n[0] < C:
-        sv_sample = n
-        break
+sv_sample = nonzero[0]
 b = -1 * sv_sample[2]
 for i in range(N):
     b += alpha[i] * targets[i] * kernel(sv_sample[1], inputs[i])
-
 print("calculate b : " + str(b) + "\n")
 
 
@@ -126,12 +124,10 @@ def indicator(new_sample):
 
 xgrid = np.linspace(-5, 5)
 ygrid = np.linspace(-4, 4)
-print(xgrid.shape)
-print(ygrid.shape)
 grid = np.ndarray((xgrid.shape[0], ygrid.shape[0]))
 for xi in range(xgrid.shape[0]):
     for xj in range(ygrid.shape[0]):
-        grid[xi][xj] = indicator(np.array([xgrid[xi], ygrid[xj]]))
+        grid[xj][xi] = indicator(np.array([xgrid[xi], ygrid[xj]]))
 
 plt.contour(xgrid, ygrid, grid, (-1.0, 0.0, 1.0), colors=('red', 'black', 'blue'), linewidths=(1, 3, 1))
 plt.savefig('SVM.png')

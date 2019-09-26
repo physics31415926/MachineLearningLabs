@@ -2,11 +2,11 @@ import numpy as np
 
 
 def Linear_kernel(x, y):
-    return np.dot(np.transpose(x), y)
+    return np.dot(x, y)
 
 
 def Polynomial_kernel(x, y, p=2):
-    return np.power(np.dot(np.transpose(x), y) + 1, p)
+    return np.power(np.dot(x, y) + 1, p)
 
 
 def RBF_kernel(x, y, sigma=1):
