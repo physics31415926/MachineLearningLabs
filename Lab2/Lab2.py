@@ -24,10 +24,10 @@ B_Y_CENTER = -0.5
 
 STANDARD_DEVIATION = 0.2
 
-C = 10
+C = np.inf
 
 kernels = [Linear_kernel, Polynomial_kernel, RBF_kernel]
-kernel = kernels[0]
+kernel = kernels[1]
 # generate the data
 
 # randn generates an array of shape (d0, d1, ..., dn),
@@ -44,15 +44,6 @@ permute = list(range(N))
 random.shuffle(permute)
 inputs = inputs[permute, :]
 targets = targets[permute]
-
-# show the data
-plt.scatter([p[0] for p in classA], [p[1] for p in classA], c='blue', label='classA')
-plt.scatter([p[0] for p in classB], [p[1] for p in classB], c='red', label='classB')
-plt.legend()
-plt.title('dataset_distribution')
-plt.axis('equal')  # Force same scale on both axes
-plt.savefig('dataset_distribution.png')  # Save a copy in a file
-# plt.show()  # Show the plot on the screen
 
 # Pij = t_i t_j K(x_i,x_j)
 # A suitable kernel function
@@ -101,6 +92,12 @@ for i in range(N):
 for i in range(N):
     if alpha[i] < 1e-5:
         alpha[i] = 0
+
+svs = []
+for i in range(N):
+    if 0 < alpha[i] < C - 1e-5:
+        svs.append(inputs[i])
+
 # nonzero structure [0]alpha_i [1]x_i [2]t_i
 print(nonzero)
 
@@ -121,8 +118,19 @@ print("calculate b : " + str(b) + "\n")
 def indicator(new_sample):
     indicate = -b
     for sv in nonzero:
-        indicate += sv[0] * sv[2] * np.dot(sv[1], new_sample)
+        indicate += sv[0] * sv[2] * kernel(sv[1], new_sample)
     return indicate
+
+
+# show the data
+plt.scatter([p[0] for p in classA], [p[1] for p in classA], c='blue', label='classA')
+plt.scatter([p[0] for p in classB], [p[1] for p in classB], c='red', label='classB')
+plt.scatter([p[0] for p in svs], [p[1] for p in svs], c='green', label='vector')
+plt.legend()
+plt.title('dataset_distribution')
+plt.axis('equal')  # Force same scale on both axes
+plt.savefig('dataset_distribution.png')  # Save a copy in a file
+# plt.show()  # Show the plot on the screen
 
 
 # plotting the decision boundary
