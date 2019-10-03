@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from kernels import *
 
 # debug mode
-np.random.seed(100)
+# np.random.seed(100)
 
 # define the sizes
 # effective ones:A1_X_CENTER,A2_X_CENTER,B_X_CENTER
@@ -96,16 +96,21 @@ print(alpha)
 print("after find the non-zeros:")
 nonzero = []
 for i in range(N):
-    if alpha[i] >= 1e-5:
+    if 1e-5 <= alpha[i]:
         nonzero.append([alpha[i], inputs[i], targets[i]])
-    else:
+for i in range(N):
+    if alpha[i] < 1e-5:
         alpha[i] = 0
-
 # nonzero structure [0]alpha_i [1]x_i [2]t_i
 print(nonzero)
 
 # calculate b
 sv_sample = nonzero[0]
+for n in nonzero:
+    if n[0] < C - 1e-5:
+        sv_sample = n
+        break
+
 b = -1 * sv_sample[2]
 for i in range(N):
     b += alpha[i] * targets[i] * kernel(sv_sample[1], inputs[i])
