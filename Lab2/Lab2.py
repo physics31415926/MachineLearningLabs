@@ -12,22 +12,21 @@ np.random.seed(100)
 #
 DATA_A_ROW = 15
 DATA_A_COL = 2
-A1_X_CENTER = 1.0
-A1_Y_CENTER = 1.5
-A2_X_CENTER = 1.0
-A2_Y_CENTER = 1.5
+A1_X_CENTER = -2.0
+A1_Y_CENTER = 2.5
+A2_X_CENTER = 2.0
+A2_Y_CENTER = -2.5
 
 DATA_B_ROW = 30
 DATA_B_COL = 2
-B_X_CENTER = -1.0
-B_Y_CENTER = -2.0
+B_X_CENTER = 0.0
+B_Y_CENTER = 0.0
 
-STANDARD_DEVIATION = 1.5
-
-C = np.inf
+STANDARD_DEVIATION = 1.0
+C = 10
 
 kernels = [Linear_kernel, Polynomial_kernel, RBF_kernel]
-kernel = kernels[0]
+kernel = kernels[1]
 # generate the data
 
 # randn generates an array of shape (d0, d1, ..., dn),
@@ -127,7 +126,7 @@ plt.scatter([p[0] for p in classA], [p[1] for p in classA], c='blue', label='cla
 plt.scatter([p[0] for p in classB], [p[1] for p in classB], c='red', label='classB')
 plt.scatter([p[0] for p in svs], [p[1] for p in svs], c='green', label='vector')
 plt.legend()
-plt.title('SVM with Linear_kernel: C = inf')
+plt.title('SVM with Polynomial_kernel: p = 2')
 plt.axis('equal')  # Force same scale on both axes
 # plotting the decision boundary
 
