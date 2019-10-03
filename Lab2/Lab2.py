@@ -24,7 +24,7 @@ B_Y_CENTER = -0.5
 
 STANDARD_DEVIATION = 0.2
 
-C = np.inf
+C = 10
 
 kernels = [Linear_kernel, Polynomial_kernel, RBF_kernel]
 kernel = kernels[1]
