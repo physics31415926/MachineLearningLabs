@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39064b6d-b701-4fff-a79b-9e5167138613" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVM.png" beforeDir="false" afterPath="$PROJECT_DIR$/SVM.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset_distribution.png" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_distribution.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernels.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernels.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            <state relative-caret-position="244">
+              <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -177,17 +173,18 @@
       <workItem from="1570025858701" duration="26000" />
       <workItem from="1570026328491" duration="249000" />
       <workItem from="1570100974070" duration="1344000" />
-      <workItem from="1570102324528" duration="560000" />
+      <workItem from="1570102324528" duration="654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20974000" />
+    <option name="totallyTimeSpent" value="21068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1423462" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1423462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -207,7 +204,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info active="true" anchor="right" id="SciView" order="4" sideWeight="0.6695279" visible="true" weight="0.3304721" />
+      <window_info anchor="right" id="SciView" order="4" sideWeight="0.6695279" visible="true" weight="0.3304721" />
       <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="5" sideWeight="0.3304721" side_tool="true" visible="true" weight="0.3304721" />
       <window_info anchor="right" id="Database" order="6" />
     </layout>
@@ -225,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        <state relative-caret-position="244">
+          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>

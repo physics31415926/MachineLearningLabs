@@ -23,11 +23,11 @@ B_X_CENTER = 0.0
 B_Y_CENTER = -0.5
 
 STANDARD_DEVIATION = 0.2
-C = 10
-kernel = Linear_kernel
-# kernel = Polynomial_kernel
-# kernel = RBF_kernel
 
+C = 10
+
+kernels = [Linear_kernel, Polynomial_kernel, RBF_kernel]
+kernel = kernels[0]
 # generate the data
 
 # randn generates an array of shape (d0, d1, ..., dn),
