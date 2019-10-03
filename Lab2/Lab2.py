@@ -5,24 +5,24 @@ import matplotlib.pyplot as plt
 from kernels import *
 
 # debug mode
-# np.random.seed(100)
+np.random.seed(100)
 
 # define the sizes
 # effective ones:A1_X_CENTER,A2_X_CENTER,B_X_CENTER
 #
-DATA_A_ROW = 10
+DATA_A_ROW = 15
 DATA_A_COL = 2
-A1_X_CENTER = 1.5
-A1_Y_CENTER = 0.5
-A2_X_CENTER = 1.5
-A2_Y_CENTER = 0.5
+A1_X_CENTER = 1.0
+A1_Y_CENTER = 1.5
+A2_X_CENTER = 1.0
+A2_Y_CENTER = 1.5
 
-DATA_B_ROW = 20
+DATA_B_ROW = 30
 DATA_B_COL = 2
-B_X_CENTER = 0.0
-B_Y_CENTER = -0.5
+B_X_CENTER = -1.0
+B_Y_CENTER = -2.0
 
-STANDARD_DEVIATION = 0.2
+STANDARD_DEVIATION = 1.5
 
 C = np.inf
 
@@ -127,7 +127,7 @@ plt.scatter([p[0] for p in classA], [p[1] for p in classA], c='blue', label='cla
 plt.scatter([p[0] for p in classB], [p[1] for p in classB], c='red', label='classB')
 plt.scatter([p[0] for p in svs], [p[1] for p in svs], c='green', label='vector')
 plt.legend()
-plt.title('SVM')
+plt.title('SVM with Linear_kernel: C = inf')
 plt.axis('equal')  # Force same scale on both axes
 # plotting the decision boundary
 
