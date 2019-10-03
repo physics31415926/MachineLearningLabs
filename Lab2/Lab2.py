@@ -14,8 +14,8 @@ DATA_A_ROW = 10
 DATA_A_COL = 2
 A1_X_CENTER = 1.5
 A1_Y_CENTER = 0.5
+A2_X_CENTER = 1.5
 A2_Y_CENTER = 0.5
-A2_X_CENTER = -1.5
 
 DATA_B_ROW = 20
 DATA_B_COL = 2
@@ -27,7 +27,7 @@ STANDARD_DEVIATION = 0.2
 C = np.inf
 
 kernels = [Linear_kernel, Polynomial_kernel, RBF_kernel]
-kernel = kernels[1]
+kernel = kernels[0]
 # generate the data
 
 # randn generates an array of shape (d0, d1, ..., dn),
@@ -127,12 +127,8 @@ plt.scatter([p[0] for p in classA], [p[1] for p in classA], c='blue', label='cla
 plt.scatter([p[0] for p in classB], [p[1] for p in classB], c='red', label='classB')
 plt.scatter([p[0] for p in svs], [p[1] for p in svs], c='green', label='vector')
 plt.legend()
-plt.title('dataset_distribution')
+plt.title('SVM')
 plt.axis('equal')  # Force same scale on both axes
-plt.savefig('dataset_distribution.png')  # Save a copy in a file
-# plt.show()  # Show the plot on the screen
-
-
 # plotting the decision boundary
 
 xgrid = np.linspace(-5, 5)
